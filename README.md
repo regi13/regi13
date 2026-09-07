@@ -1,4 +1,4 @@
-### Olá, eu sou o Regi 👋
+### Olá, eu sou o Regi!
 
 Front-end developer construindo **ferramentas web interativas para o mercado ** — calculadoras, configuradores, mini-apps e landing pages pensadas pra quem cria conteúdo ou trabalha com treino/nutrição.
 
