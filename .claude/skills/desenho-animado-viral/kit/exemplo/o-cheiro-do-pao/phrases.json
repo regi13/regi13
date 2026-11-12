@@ -1,0 +1,85 @@
+{
+ "duration": 23.348667,
+ "frames30": 700,
+ "source": "silence-align (cost 0.30)",
+ "segments": [
+  [
+   0.157667,
+   2.21942
+  ],
+  [
+   2.34313,
+   2.47996
+  ],
+  [
+   3.01233,
+   6.62125
+  ],
+  [
+   6.88808,
+   8.48492
+  ],
+  [
+   9.02412,
+   11.6723
+  ],
+  [
+   12.2201,
+   14.4877
+  ],
+  [
+   15.0323,
+   19.0036
+  ],
+  [
+   19.5742,
+   20.1063
+  ],
+  [
+   20.5263,
+   22.9142
+  ]
+ ],
+ "phrases": [
+  {
+   "text": "Um homem foi levado ao juiz por cheirar p\u00e3o.",
+   "s": 0.158,
+   "e": 2.48
+  },
+  {
+   "text": "Numa vila antiga, um pobre comia seu p\u00e3o seco na porta da padaria,",
+   "s": 3.012,
+   "e": 6.621
+  },
+  {
+   "text": "s\u00f3 sentindo o cheiro do forno.",
+   "s": 6.888,
+   "e": 8.485
+  },
+  {
+   "text": "O padeiro ficou furioso e cobrou pelo cheiro.",
+   "s": 9.024,
+   "e": 11.672
+  },
+  {
+   "text": "A vila inteira foi assistir ao julgamento.",
+   "s": 12.22,
+   "e": 14.488
+  },
+  {
+   "text": "O juiz pegou a bolsa do pobre e sacudiu as moedas no ouvido do padeiro.",
+   "s": 15.032,
+   "e": 19.004
+  },
+  {
+   "text": "Pronto.",
+   "s": 19.574,
+   "e": 20.106
+  },
+  {
+   "text": "O cheiro do p\u00e3o foi pago com o som do dinheiro.",
+   "s": 20.526,
+   "e": 22.914
+  }
+ ]
+}
