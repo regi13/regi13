@@ -13,6 +13,17 @@ def ts(t): h = int(t // 3600); m = int(t % 3600 // 60); s = t % 60; return f"{h}
 STY = {"N": "Narr", "E": "Pens"}
 ev = []
 for c in meta:
+    if c.get("phrases"):
+        for ph in c["phrases"]:
+            style = STY[c["spk"]]; words = ph["text"].replace("…", "...").split(); lim = 22; chunks = []; cur = []
+            for w_ in words:
+                if cur and len(" ".join(cur + [w_])) > lim: chunks.append(cur); cur = [w_]
+                else: cur.append(w_)
+            if cur: chunks.append(cur)
+            tl = sum(len(" ".join(w)) for w in chunks); t = ph["start"]; end_all = ph["end"] + 0.15
+            for w in chunks:
+                d = (end_all - ph["start"]) * len(" ".join(w)) / tl; ev.append(f"Dialogue: 0,{ts(t)},{ts(t + d)},{style},,0,0,0,,{pos(t)}{' '.join(w)}"); t += d
+        continue
     pieces = [p for p in re.split(r"(?<=\.\.\.)\s+|(?<=[.?!])\s+", c["text"]) if p]
     segs = c["segs"]
     if len(segs) != len(pieces):  # fallback: proportional over the whole clip
