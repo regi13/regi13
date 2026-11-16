@@ -1,0 +1,122 @@
+[
+ {
+  "name": "n1",
+  "start": 0.5,
+  "spk": "N",
+  "text": "A mãe sai para o mercado. Pede: tranque a porta."
+ },
+ {
+  "name": "e1",
+  "start": 6.0,
+  "spk": "E",
+  "text": "Sempre tranco."
+ },
+ {
+  "name": "n2",
+  "start": 8.0,
+  "spk": "N",
+  "text": "O interfone toca. Uma voz convoca o sétimo andar: reunião de emergência, no térreo, com as portas destrancadas."
+ },
+ {
+  "name": "e2",
+  "start": 17.1,
+  "spk": "E",
+  "text": "Reunião? Seu Armando saiu às seis."
+ },
+ {
+  "name": "e3",
+  "start": 19.8,
+  "spk": "E",
+  "text": "Esse prédio nem tem porteiro à noite."
+ },
+ {
+  "name": "n3",
+  "start": 23.55,
+  "spk": "N",
+  "text": "De repente, as luzes se apagam."
+ },
+ {
+  "name": "e4",
+  "start": 25.7,
+  "spk": "E",
+  "text": "Calma. Foi o disjuntor... né?"
+ },
+ {
+  "name": "n4",
+  "start": 29.8,
+  "spk": "N",
+  "text": "No grupo do prédio, o síndico avisa: ninguém desça. Alguém invadiu o sistema."
+ },
+ {
+  "name": "e5",
+  "start": 37.0,
+  "spk": "E",
+  "text": "Passos na escada. Devagar. Porta por porta."
+ },
+ {
+  "name": "n5",
+  "start": 40.8,
+  "spk": "N",
+  "text": "Os passos param. Bem em frente à porta."
+ },
+ {
+  "name": "e6",
+  "start": 45.4,
+  "spk": "E",
+  "text": "Respira baixinho."
+ },
+ {
+  "name": "n6",
+  "start": 47.7,
+  "spk": "N",
+  "text": "A mãe escreve que já chegou. Ele responde: não volta, chame a polícia."
+ },
+ {
+  "name": "e7",
+  "start": 54.2,
+  "spk": "E",
+  "text": "A maçaneta se mexeu."
+ },
+ {
+  "name": "n7",
+  "start": 61.0,
+  "spk": "N",
+  "text": "Uma voz conhecida pede, do outro lado: abre, filho."
+ },
+ {
+  "name": "e8",
+  "start": 66.3,
+  "spk": "E",
+  "text": "É a voz dela. Mas ela acabou de entrar no mercado."
+ },
+ {
+  "name": "n8",
+  "start": 70.1,
+  "spk": "N",
+  "text": "No celular, a mãe diz: está na fila do caixa."
+ },
+ {
+  "name": "e9",
+  "start": 72.7,
+  "spk": "E",
+  "text": "Se a mamãe está no mercado... quem está na porta?"
+ },
+ {
+  "name": "e10",
+  "start": 77.2,
+  "spk": "E",
+  "text": "Ou... alguém pegou o celular dela."
+ },
+ {
+  "name": "n9",
+  "start": 80.4,
+  "spk": "N",
+  "text": "Do outro lado, a voz sussurra: filho... por favor."
+ },
+ {
+  "name": "n10",
+  "start": 83.9,
+  "spk": "N",
+  "text": "O que você faria? Abrir a porta... ou deixar trancada?"
+ }
+]

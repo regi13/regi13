@@ -1,6 +1,6 @@
 ---
 name: desenho-animado-viral
-description: Cria um desenho animado vertical (Shorts/Reels) em português: 10 ideias, roteiro, narração grátis com voz de IA e o MP4 final com música e efeitos.
+description: Cria um desenho animado vertical (Shorts/Reels) em português: 10 ideias, roteiro, narração com voz de IA (grátis), legendas e o MP4 final com música e efeitos. Tem o modo cartoon leve e o modo POV de suspense (1ª pessoa + narrador em 3ª pessoa).
 ---
 
 # Desenho animado viral: ideia → roteiro → narração → MP4 pronto
@@ -14,8 +14,45 @@ Converse sempre em **português do Brasil**.
 - Nada de pessoas reais vivas como personagens, nem mascotes ou logotipos de marcas.
 - Sem legendas, a menos que o usuário peça. Texto dentro da cena (placa, letreiro) pode, e precisa ler certo (não espelhado).
 - Nunca edite nem mude o tempo da narração do usuário. A imagem é que segue a voz; cada reação visual acontece 0–3 quadros antes da palavra.
-- **Níveis de áudio:** trilha a 50 % do nível da voz (−6 dB, RMS com gate). Efeitos a 50 % ou menos, com picos limitados. Mixe sempre com `mix.py`, nunca à mão. Sem ducking nem compressão que mude essa proporção.
+- **Níveis de áudio (cartoon leve):** trilha a 50 % do nível da voz (−6 dB, RMS com gate). No modo POV de suspense vale `mix2.py` (ver Lições aprendidas). Efeitos a 50 % ou menos, com picos limitados. No cartoon leve, mixe com `mix.py`, sem ducking nem compressão que mude essa proporção.
 - Mantenha o usuário informado com uma lista de tarefas. Envie uma folha de quadros (prévia) antes do render longo.
+
+## Lições aprendidas com o usuário (OBRIGATÓRIO: releia antes de cada vídeo e não repita nenhum erro)
+Estas são correções reais que o usuário fez. Cada item é uma regra.
+
+**Vozes**
+- **Nunca** ofereça só as 3 vozes embutidas do kit (`pm_alex`, `pm_santa`, `pf_dora`) como "opções". O usuário pediu explicitamente para não repetir sempre as mesmas. Quando pedirem vozes, dê **3 opções diferentes por personagem**, nenhuma delas as embutidas. As embutidas são só reserva de emergência, com aviso.
+- Ordem de motores de voz (melhor → pior): 1) **ElevenLabs** (só se o plano permitir; o plano gratuito pode ser desativado com "Unusual activity… Free Tier disabled": **não contorne**, avise o usuário e passe ao 2); 2) **Qwen3-TTS 1.7B** (Apache-2.0, pt-BR, aceita instruções de estilo; usa `kit/pov-suspense/qw_gen.py`: VoiceDesign cria uma voz fixa e o modelo Base a clona para todas as falas); 3) Chatterbox multilingual; 4) Kokoro (`voz.py`, o pior).
+- Para baixar modelos do Hugging Face use `HF_HUB_DISABLE_XET=1` (senão trava no host do xet). Se a rede bloquear, use `read_documentation`/`update_environment` (pede aprovação do usuário), nunca contorne.
+- **Confira cada fala com reconhecimento de fala** (faster-whisper): gere 2–3 tomadas, escolha a que o ASR transcreve certo (ex.: "porteiro", não "forteiro") e regenere até sair sem erro.
+- **Sussurro:** nos momentos de tensão a voz tem que sussurrar. Peça no estilo da voz (instrução/clone de uma referência sussurrada). Só use o processamento de sussurro (envelope cepstral + ruído) como reserva, porque o efeito sobre voz normal soa robótico.
+- Se o usuário pedir narração em **3ª pessoa**, as falas dos personagens (mãe, interfone, vizinho…) viram **narração** e os personagens só aparecem animados (sem voz própria e sem mexer a boca). Use no máximo 2 vozes: narrador (3ª pessoa, grave, suspense) e pensamento (1ª pessoa, sussurrado). Textos de celular/chat aparecem na tela.
+- A fala tem que caber no plano: ou encurte o texto, ou **estique o plano** (linha do tempo guiada pelo áudio, `plan_timeline.py`). Nunca acelere a voz acima de ~1,1×.
+- Nunca afirme que a voz está "100 % humana": você não ouve áudio. Meça (ASR, F0), diga o que não conseguiu conferir e o que o usuário pode melhorar (ex.: plano pago do ElevenLabs).
+
+**Som**
+- No modo suspense, trilha/efeitos de suspense **altos**: música ≈ voz −0,4 dB, efeitos ≈ −2 dB, com ducking leve na voz (`mix2.py`). A regra "50 % da voz" vale só para o cartoon leve. Siga o pedido do usuário.
+- Camadas de suspense: crescendo antes da virada, drone grave, batimentos que aceleram, rangido agudo, batidas graves, apito no fim, silêncio dramático e golpe no cartão final.
+
+**Visual (checklist antes de finalizar: veja pelo menos 1 quadro a cada 2–3 s, as transições e cada animação de porta/objeto)**
+- **Porta:** vão real na parede + batente + corredor atrás, abre **para fora**, sem placa clara no pé. **Nunca** brilho, faixa ou halo branco no pé da porta (nem no claro nem no escuro). Porta não pode girar na frente de parede maciça.
+- **Zoom em objeto** (maçaneta etc.): confira o **último quadro do zoom**: o objeto tem que estar no centro e visível.
+- **Mãos POV:** nada de "palmas abertas" nem braços de tubo; punhos relaxados e baixos. Mãos só abertas quando seguram algo.
+- **Closes de rosto:** cabeça nunca cortada (câmera a ~2 m, fov ~34).
+- **Cenas escuras:** legíveis (luz de lua, ganho azul moderado). Nunca um retângulo escuro vazio.
+- **Efeitos** (anéis de som etc.) com tamanho proporcional ao objeto.
+- **Personagem narrado** não mexe a boca.
+- Cada pista visual citada na fala precisa existir na imagem (se tirar o recurso visual, reescreva a fala).
+
+**Legendas**
+- Narrador branco, pensamento ciano em itálico, uma linha de ≤ 22 caracteres (nunca estourar a borda), sussurro menor/itálico. Rodar `make_ass.py` depois de qualquer mudança de tempo.
+
+**Processo**
+- Gere 8–12 quadros de teste e olhe **antes** do render longo; re-renderize só os quadros afetados (lista de intervalos) e use 4 processos em paralelo com `RESUME=1`.
+- A linha do tempo da história fica em **segundos** e o áudio comanda (`plan_timeline.py` gera `web/tmap.js` e `work/timeline.json`).
+- Disco é curto (~12–17 GB livres): apague venvs e caches velhos antes de baixar modelos de 4 GB.
+- Quando o usuário der autonomia total, **não pare para pedir aprovação**: decida, execute e conte o que mudou, incluindo o que não conseguiu verificar.
+- Reporte tudo com franqueza (limitações, o que não ouviu/viu) e ofereça salvar o projeto no repositório.
 
 ## Etapa 1: Ponto de partida (sempre primeiro)
 Se já veio um arquivo de áudio, pule para a Etapa 4 (se veio o roteiro também, use-o no timing).
@@ -54,9 +91,8 @@ Responda com:
 - O roteiro num bloco copiável, com contagem de palavras e duração estimada.
 - Um parágrafo com o plano visual (os planos que você vai animar).
 - **Amostras das vozes antes da escolha:** rode o setup (4.0) se ainda não rodou e gere, com `voz.py`, a primeira frase do roteiro nas 3 vozes (`amostra_pm_alex.wav`, `amostra_pm_santa.wav`, `amostra_pf_dora.wav`). Entregue os 3 áudios na conversa para o usuário ouvir.
-- **A escolha da voz** (AskUserQuestion, depois das amostras):
-  - **Voz grátis embutida (recomendado para começar)**: voz de IA em português do Brasil gerada aqui mesmo pelo `voz.py`. Vozes: `pm_alex` (masculina, narrador), `pm_santa` (masculina, grave), `pf_dora` (feminina).
-  - **Vou gerar fora e enviar**: ElevenLabs, Higgsfield ou outra. Dicas: uma voz de narrador firme e calorosa, velocidade ~1,05–1,1, estabilidade ~45–55 %, pausas naturais no fim das frases, exportar sem música (mp3 ou wav).
+- **A escolha da voz** (AskUserQuestion, depois das amostras): ofereça **3 opções por personagem** (nunca as 3 embutidas). Descreva cada uma (ex.: "grave, rouca, true crime"). Se o usuário pedir narração em 3ª pessoa, a escolha é só do **narrador** e da **voz de pensamento**. Veja "Lições aprendidas".
+  - **Vou gerar fora e enviar**: ElevenLabs ou outra. Dicas: narrador firme e caloroso, velocidade ~1,05–1,1, estabilidade ~45–55 %, pausas naturais, sem música (mp3 ou wav).
 Guarde o texto final do roteiro: ele comanda o timing (não precisa de reconhecimento de fala). Se o usuário gravou uma versão alterada, peça o texto final.
 
 ## Etapa 4: Montar o vídeo
@@ -155,3 +191,11 @@ Reescreva a tabela de deixas para a história; os sintetizadores ficam. `audio.p
 - `render.mjs`: Playwright → `renderFrame(f)` → JPEG em `frames/f0000.jpg`.
 - `voz.py`: narração grátis pt-BR. `timing.py`: alinhamento. `audio.py`: stems. `mix.py`: trava de níveis. `finish.sh`: loudness, codificação, QA. `sheet.py`: folhas de quadros.
 - Personagens: API Pen de mromidev/claude-animated-shorts (`templates/bridge/toon.ts`, já convertida em `engine/toonbase.js`), estendida por `roman.js`. Licenças em `LICENCAS.md`.
+
+## Modo POV de suspense (1ª pessoa + narrador em 3ª pessoa)
+Usado em "O interfone" (apartamento, apagão, alguém na porta). Tudo em `kit/pov-suspense/`.
+- **Câmera POV:** altura dos olhos, fov 60–72, **mãos do narrador** como cartão colado na câmera (`povHands`, poses `idle`/`stir`/`lock`/`grip`) e **celular** como cartão (`phoneUI`: chat, banner de notificação, digitação letra por letra). Cartão final `endCard` ("O QUE VOCÊ FARIA?" + 2 botões + "Comente PARTE 2").
+- **Cenas de reação:** cartão do personagem (`teen`), câmera a ~2,4 m com fov ~34, fundo desfocado.
+- **Mundo:** `kit/pov-suspense/main.js` tem o apartamento (cozinha, mesa, sofá, janela com skyline dia/noite, interfone, porta com vão + corredor). Luz clara → apagão azul-noite com luz de lua (`lightFor`).
+- **Pipeline:** `qw_gen.py` (vozes) → `plan_timeline.py` (estica os planos conforme o áudio) → `build_voice3.py` (voice.wav + clips.json) → `audio.py` (trilha de suspense + efeitos, já remapeados no tempo) → `mix2.py` → `make_ass.py` → ffmpeg `ass=legendas.ass` + `loudnorm`.
+- Gancho/estrutura (do vídeo de referência): normalidade → autoridade estranha → luz apaga → pistas pelo celular → ameaça por sons → dúvida sobre quem está do outro lado → dilema com 2 botões → "Comente PARTE 2". Cortes a cada 1–3 s, legendas curtas coloridas por quem fala.
