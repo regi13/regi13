@@ -10,7 +10,7 @@ def pos(t):   # captions must never cover the phone chat or the end-card buttons
     if CARD[0] <= t < CARD[1]: return r"{\an2\pos(540,1810)}"
     return ""
 def ts(t): h = int(t // 3600); m = int(t % 3600 // 60); s = t % 60; return f"{h}:{m:02d}:{s:05.2f}"
-STY = {"N": "Narr", "E": "Pens"}
+STY = {"N": "Narr", "E": "Pens", "M": "Mae"}
 ev = []
 for c in meta:
     if c.get("phrases"):
@@ -49,6 +49,7 @@ WrapStyle: 2
 [V4+ Styles]
 Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
 Style: Narr,DejaVu Sans,66,&H00FFFFFF,&H000000FF,&H00101010,&H80000000,-1,0,0,0,100,100,0,0,1,7,2,2,50,50,560,1
+Style: Mae,DejaVu Sans,66,&H00D9B3FF,&H000000FF,&H00101010,&H80000000,-1,0,0,0,100,100,0,0,1,7,2,2,50,50,560,1
 Style: Pens,DejaVu Sans,62,&H00FFE14D,&H000000FF,&H00101010,&H80000000,-1,-1,0,0,100,100,0,0,1,6,2,2,50,50,560,1
 
 [Events]

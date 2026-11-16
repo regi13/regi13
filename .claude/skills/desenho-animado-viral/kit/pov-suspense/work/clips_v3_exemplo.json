@@ -1,0 +1,140 @@
+[
+ {
+  "name": "s0",
+  "start": 0.5,
+  "spk": "N",
+  "text": "Domingo à noite."
+ },
+ {
+  "name": "m1",
+  "start": 2.0,
+  "spk": "M",
+  "text": "Filho, vou ao mercado. Vinte minutos. Tranca a porta."
+ },
+ {
+  "name": "e1",
+  "start": 6.9,
+  "spk": "E",
+  "text": "Eu sempre tranco a porta."
+ },
+ {
+  "name": "s2",
+  "start": 8.9,
+  "spk": "N",
+  "text": "O interfone toca. Uma voz estranha convoca o sétimo andar: reunião de emergência, no térreo, com as portas destrancadas."
+ },
+ {
+  "name": "e2",
+  "start": 17.52,
+  "spk": "E",
+  "text": "Reunião? Seu Armando saiu às seis."
+ },
+ {
+  "name": "e3",
+  "start": 22.04,
+  "spk": "E",
+  "text": "Esse prédio nem tem porteiro à noite."
+ },
+ {
+  "name": "s3",
+  "start": 25.94,
+  "spk": "N",
+  "text": "E, de repente... as luzes se apagam."
+ },
+ {
+  "name": "e4",
+  "start": 29.49,
+  "spk": "E",
+  "text": "Calma. Foi o disjuntor... né?"
+ },
+ {
+  "name": "s4",
+  "start": 33.29,
+  "spk": "N",
+  "text": "No grupo do prédio, chega o aviso: ninguém deve descer. Alguém invadiu o sistema."
+ },
+ {
+  "name": "e5",
+  "start": 40.62,
+  "spk": "E",
+  "text": "Passos na escada. Devagar. Porta por porta."
+ },
+ {
+  "name": "s5",
+  "start": 46.43,
+  "spk": "N",
+  "text": "Os passos param. Bem em frente à porta."
+ },
+ {
+  "name": "e6",
+  "start": 51.22,
+  "spk": "E",
+  "text": "Respira baixinho."
+ },
+ {
+  "name": "s6",
+  "start": 53.57,
+  "spk": "N",
+  "text": "A mãe escreve que já chegou. Ele responde: não volta, chame a polícia."
+ },
+ {
+  "name": "e7",
+  "start": 60.07,
+  "spk": "E",
+  "text": "A maçaneta se mexeu."
+ },
+ {
+  "name": "s7",
+  "start": 66.5,
+  "spk": "N",
+  "text": "Alguém bate à porta. E uma voz conhecida chama."
+ },
+ {
+  "name": "m2",
+  "start": 70.0,
+  "spk": "M",
+  "text": "Filho... sou eu. Esqueci a chave. Abre pra mamãe."
+ },
+ {
+  "name": "e8",
+  "start": 74.7,
+  "spk": "E",
+  "text": "É a voz dela. Mas ela acabou de entrar no mercado."
+ },
+ {
+  "name": "s8",
+  "start": 79.0,
+  "spk": "N",
+  "text": "No celular, a mãe diz: está na fila do caixa."
+ },
+ {
+  "name": "e9",
+  "start": 83.06,
+  "spk": "E",
+  "text": "Se a mamãe está no mercado... quem está na porta?"
+ },
+ {
+  "name": "e10",
+  "start": 87.65,
+  "spk": "E",
+  "text": "Ou... alguém pegou o celular dela."
+ },
+ {
+  "name": "s9",
+  "start": 91.72,
+  "spk": "N",
+  "text": "A voz volta. Baixinho."
+ },
+ {
+  "name": "m3",
+  "start": 93.7,
+  "spk": "M",
+  "text": "Filho... por favor."
+ },
+ {
+  "name": "s10",
+  "start": 97.0,
+  "spk": "N",
+  "text": "O que você faria? Abrir a porta... ou deixar trancada?"
+ }
+]

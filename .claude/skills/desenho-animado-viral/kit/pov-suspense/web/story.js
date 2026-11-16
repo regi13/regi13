@@ -120,7 +120,7 @@ const actorsAt0 = (f, T) => {
     case 'cozinha': out.push(camCard(f, 'h' + q(f * 0.45, 1), (p) => T.povHands(p, { pose: 'stir', w: f * 0.45 }))); break;
     case 'mae': {
       const walk = clamp((s - 3.9) / 1.2), pos = lerp3([0.15, 0, -1.2], [DXm, 0, -4.4], walk);
-      if (s < 5.12) out.push(R(T, 'mae', { seed: 9, ...life(f, 9), expr: s < 2.6 ? 'smile' : s < 4.2 ? 'grin' : 'smile', facing: 0, look: 0, L: s > 3.9 ? 'hang' : 'wave', R: 'hang', wv: q(f * 0.35, 1), step: walk > 0 && walk < 1 ? stp(f) : 0 }, pos));
+      if (s < 5.12) out.push(R(T, 'mae', { seed: 9, ...life(f, 9), expr: (s >= 2.0 && s < 5.1 && Math.floor(f / 4) % 2 === 0) ? 'grin' : 'smile', facing: 0, look: 0, L: s > 3.9 ? 'hang' : 'wave', R: 'hang', wv: q(f * 0.35, 1), step: walk > 0 && walk < 1 ? stp(f) : 0 }, pos));
       out.push(camCard(f, 'hi' + q(Math.sin(f * 0.1) * 6, 0), (p) => T.povHands(p, { pose: 'idle', sway: Math.sin(f * 0.1) * 6 })));
       break;
     }
