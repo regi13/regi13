@@ -1,0 +1,117 @@
+[
+ {
+  "name": "n1",
+  "spk": "N",
+  "text": "Duas e catorze da manhã. Um pedido novo. O cliente se chama Thiago. O endereço é a casa do Thiago.",
+  "shot": "app",
+  "gap": 0.0,
+  "rule": "02:14"
+ },
+ {
+  "name": "t1",
+  "spk": "R",
+  "text": "Eu não pedi nada. Deve ser um erro.",
+  "shot": "thiago_duvida",
+  "gap": 0.6
+ },
+ {
+  "name": "n2",
+  "spk": "N",
+  "text": "Ele liga para a central do app.",
+  "shot": "ligacao",
+  "gap": 0.5
+ },
+ {
+  "name": "s1",
+  "spk": "C",
+  "text": "Central do app. Pedido com o seu nome? É normal. Aceite e entregue.",
+  "shot": "suporte",
+  "gap": 0.7
+ },
+ {
+  "name": "t2",
+  "spk": "R",
+  "text": "Normal? Entregar na minha própria casa?",
+  "shot": "thiago_duvida",
+  "gap": 0.5
+ },
+ {
+  "name": "s2",
+  "spk": "C",
+  "text": "Observação do cliente: não toque a campainha. Boa entrega.",
+  "shot": "suporte",
+  "gap": 0.7
+ },
+ {
+  "name": "n3",
+  "spk": "N",
+  "text": "A rua está vazia. A luz da sala está acesa. O Thiago não deixou a luz acesa.",
+  "shot": "casa",
+  "gap": 0.8,
+  "rule": "02:31"
+ },
+ {
+  "name": "n4",
+  "spk": "N",
+  "text": "No recibo, só um item, o entregador. Hora da entrega: amanhã, duas e quarenta e um.",
+  "shot": "recibo",
+  "gap": 0.7
+ },
+ {
+  "name": "t3",
+  "spk": "R",
+  "text": "Amanhã? Isso não faz sentido.",
+  "shot": "thiago_medo",
+  "gap": 0.6
+ },
+ {
+  "name": "n5",
+  "spk": "N",
+  "text": "Pela janela, ele vê alguém sentado à mesa. De capacete. Com a mochila dele. Esperando uma entrega.",
+  "shot": "janela",
+  "gap": 0.8
+ },
+ {
+  "name": "t4",
+  "spk": "R",
+  "text": "Aquele ali sou eu. Eu estou ali dentro.",
+  "shot": "thiago_choque",
+  "gap": 1.0
+ },
+ {
+  "name": "n6",
+  "spk": "N",
+  "text": "O celular vibra. É a central de novo.",
+  "shot": "ligacao",
+  "gap": 0.9
+ },
+ {
+  "name": "s3",
+  "spk": "C",
+  "text": "Aviso. Cancelar pedido de cliente bloqueia a conta para sempre. Entregar conclui o pedido.",
+  "shot": "suporte",
+  "gap": 0.7
+ },
+ {
+  "name": "t5",
+  "spk": "R",
+  "text": "Concluir o pedido... com ele lá dentro?",
+  "shot": "thiago_pensa",
+  "gap": 0.8
+ },
+ {
+  "name": "n7",
+  "spk": "N",
+  "text": "Trinta segundos. A luz da sala se apaga. Do outro lado da janela, o outro Thiago balança a cabeça: não abra.",
+  "shot": "contagem",
+  "gap": 0.9,
+  "rule": "00:30"
+ },
+ {
+  "name": "n8",
+  "spk": "N",
+  "text": "Abrir a porta e descobrir quem está certo. Ou cancelar o pedido e perder tudo. O que o Thiago faz? Você decide. A segunda parte segue o que a maioria escolher.",
+  "shot": "final",
+  "gap": 0.9
+ }
+]

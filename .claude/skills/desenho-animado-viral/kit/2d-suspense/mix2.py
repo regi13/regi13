@@ -10,7 +10,8 @@ def grms(x, win=0.4, gate=-30):
 v, mu, sf = load("voice.wav"), load("music.wav"), load("sfx.wav")
 N = len(v); mu = np.pad(mu, (0, max(0, N - len(mu))))[:N]; sf = np.pad(sf, (0, max(0, N - len(sf))))[:N]
 rv = grms(v)
-gm = 0.95 * rv / grms(mu); gs = min(0.8 * rv / grms(sf), 0.9 * np.abs(v).max() / max(np.abs(sf).max(), 1e-9))
+sf = np.tanh(sf / (np.percentile(np.abs(sf), 99.0) + 1e-9) * 1.1)   # comprime os picos dos efeitos para poderem ficar altos (≈ -2 dB da voz)
+gm = 0.95 * rv / grms(mu); gs = min(0.8 * rv / grms(sf), 1.1 * np.abs(v).max() / max(np.abs(sf).max(), 1e-9))
 env = np.convolve(np.abs(v), np.ones(int(0.12 * SR)) / int(0.12 * SR), "same"); act = np.clip(env / (0.35 * env.max() + 1e-9) * 6, 0, 1); act = np.convolve(act, np.ones(int(0.25 * SR)) / int(0.25 * SR), "same")
 duck = 1 - 0.38 * np.clip(act, 0, 1)
 mix = v + mu * gm * duck + sf * gs * (1 - 0.15 * np.clip(act, 0, 1))
