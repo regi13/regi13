@@ -49,14 +49,14 @@ def tempo_fit(x, target, lo=0.88, hi=1.1):
     return ff(x, f"atempo={r:.4f}") if abs(r - 1) > 0.02 else x
 def higher(x): return ff(x, "rubberband=pitch=1.07:formant=0:pitchq=1:transients=smooth")
 CH["R"] = CH["E"]
-PAUSE = {"...": 0.85, "…": 0.85, ".": 0.55, "?": 0.6, "!": 0.5, ":": 0.42, ";": 0.35, ",": 0.26}
-FAC = {"N": 1.05, "R": 0.9, "C": 0.8, "RAD": 1.0}
+PAUSE = {"...": 0.95, "…": 0.95, ".": 0.7, "?": 0.78, "!": 0.65, ":": 0.5, ";": 0.45, ",": 0.3}
+FAC = {"N": 1.1, "R": 1.0, "C": 0.95, "RAD": 1.0}
 def pause_after(t, spk):
     for k in ("...", "…", ".", "?", "!", ":", ";", ","):
         if t.rstrip().endswith(k): return PAUSE[k] * FAC[spk]
     return 0.3
 LEV = {"N": -19, "R": -21, "C": -19, "RAD": -21}
-PH = json.load(open("work/p4_phrases.json")); S = json.load(open("work/script_v5.json")); by = {}
+PH = json.load(open("work/p5_phrases.json")); S = json.load(open("work/script_v5.json")); by = {}
 for p in PH: by.setdefault(p["clip"], []).append(p)
 out = np.zeros(N, np.float32); meta = []; t_end = 0.6
 for c in S:
