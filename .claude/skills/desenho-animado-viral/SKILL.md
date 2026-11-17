@@ -38,6 +38,17 @@ Estas são correções reais que o usuário fez. Cada item é uma regra.
 - A fala tem que caber no plano: ou encurte o texto, ou **estique o plano** (linha do tempo guiada pelo áudio, `plan_timeline.py`). Nunca acelere a voz acima de ~1,1×.
 - Nunca afirme que a voz está "100 % humana": você não ouve áudio. Meça (ASR, F0), diga o que não conseguiu conferir e o que o usuário pode melhorar (ex.: plano pago do ElevenLabs).
 
+**Roteiro e estrutura (lições do "Plantão das Cinco Regras")**
+- **Ordem cronológica coerente:** se um chefe/guia explica regras no dia 1, o personagem NÃO pode reagir a acontecimentos no dia 1. Dia 1 = só explicação; os acontecimentos vão para a noite/dia 2, com cartão de título ("DIA 1", "NOITE 2"). Revise o roteiro lendo-o como linha do tempo antes de gravar.
+- Final precisa **deixar o público decidir** (2 botões numerados + "COMENTE 1 OU 2" + "A PARTE 2 SEGUE A MAIORIA"). Nada de final "o que é a regra 5".
+- Ícones/adereços nunca cobrem texto de botão: confira o quadro final.
+- Uma fala nova só regrava as frases alteradas (cache por texto); mas **qualquer mudança de roteiro refaz tempos, legendas, trilha e todos os quadros**.
+
+**Motor 2D (preferido desde "Plantão")**
+- `kit/2d-suspense/`: Canvas 2D puro (sem Three.js), ~0,6–1 s/quadro, 4 processos em paralelo. `web/main.js` (cenas por tipo de plano, `CAM` zoom, vinheta, grão), `plan_cuts.py` (1 plano por fala, corte 0,12 s antes), `pt_phr4.py` (voz frase a frase, Chatterbox pt-BR, ASR estrito), `build_voice7.py`, `audio4.py`, `make_ass.py`, `mix2.py`, `finish.sh`. Exemplo de roteiro: `work/script_exemplo.json`.
+- Vozes escolhidas pelo usuário via candidatas derivadas por pitch (`pt_cand2.py`): 3 opções por personagem.
+- Pesquisa de referência (voz limpa + animação profissional): `PESQUISA-voz-e-animacao.md`.
+
 **Som**
 - No modo suspense, trilha/efeitos de suspense **altos**: música ≈ voz −0,4 dB, efeitos ≈ −2 dB, com ducking leve na voz (`mix2.py`). A regra "50 % da voz" vale só para o cartoon leve. Siga o pedido do usuário.
 - Camadas de suspense: crescendo antes da virada, drone grave, batimentos que aceleram, rangido agudo, batidas graves, apito no fim, silêncio dramático e golpe no cartão final.

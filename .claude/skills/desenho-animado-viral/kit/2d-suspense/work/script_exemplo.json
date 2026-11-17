@@ -1,0 +1,155 @@
+[
+ {
+  "name": "c1",
+  "spk": "C",
+  "text": "Regra dois. Se o rádio chamar o seu nome, não responda.",
+  "shot": "claudio",
+  "rule": "REGRA 2/5",
+  "gap": 0.0
+ },
+ {
+  "name": "n1",
+  "spk": "N",
+  "text": "Parece fácil. Até a voz no rádio ser a sua.",
+  "shot": "radio",
+  "gap": 0.5
+ },
+ {
+  "name": "n2",
+  "spk": "N",
+  "text": "Primeiro dia do Rafael. Prédio vazio. Seu Cláudio entrega uma folha com cinco regras.",
+  "shot": "predio",
+  "gap": 0.9,
+  "rule": "DIA 1"
+ },
+ {
+  "name": "r2",
+  "spk": "R",
+  "text": "Cinco regras para vigiar um prédio? Tá bom.",
+  "shot": "rafael_deboche",
+  "gap": 0.5
+ },
+ {
+  "name": "c3",
+  "spk": "C",
+  "text": "Primeira regra. Às duas da manhã, o elevador do sétimo andar chama sozinho. Não entre.",
+  "shot": "claudio_cima",
+  "rule": "REGRA 1/5",
+  "gap": 0.7
+ },
+ {
+  "name": "c4",
+  "spk": "C",
+  "text": "Regra três. Nunca olhe as câmeras do sétimo andar.",
+  "shot": "claudio_monitor",
+  "rule": "REGRA 3/5",
+  "gap": 0.8
+ },
+ {
+  "name": "c5",
+  "spk": "C",
+  "text": "Regra quatro. Não atenda o telefone da portaria.",
+  "shot": "claudio",
+  "gap": 0.7,
+  "rule": "REGRA 4/5"
+ },
+ {
+  "name": "c6",
+  "spk": "C",
+  "text": "A cinco está em branco. Amanhã à noite o prédio é seu. Eu não vou estar aqui.",
+  "shot": "claudio_cima",
+  "gap": 0.8
+ },
+ {
+  "name": "n3a",
+  "spk": "N",
+  "text": "Segunda noite. Rafael está sozinho.",
+  "shot": "predio",
+  "gap": 1.0,
+  "rule": "NOITE 2"
+ },
+ {
+  "name": "n3",
+  "spk": "N",
+  "text": "Duas em ponto. A porta abre. Vazia. E o botão do térreo acende.",
+  "shot": "elevador",
+  "gap": 0.6
+ },
+ {
+  "name": "r3",
+  "spk": "R",
+  "text": "Não entrei. Juro que não entrei.",
+  "shot": "rafael_medo",
+  "gap": 0.5
+ },
+ {
+  "name": "n4",
+  "spk": "N",
+  "text": "A regra três diz para nunca olhar as câmeras. Rafael olha. Claro que olha. Na tela, um vigia, de costas, com o uniforme dele.",
+  "shot": "monitor",
+  "gap": 0.6
+ },
+ {
+  "name": "n5",
+  "spk": "N",
+  "text": "Então o rádio chia.",
+  "shot": "radio_chia",
+  "gap": 1.1
+ },
+ {
+  "name": "rad",
+  "spk": "RAD",
+  "text": "Rafael... responde.",
+  "shot": "radio_voz",
+  "gap": 1.4
+ },
+ {
+  "name": "r5",
+  "spk": "R",
+  "text": "Essa voz é a minha. E eu estou calado.",
+  "shot": "rafael_choque",
+  "gap": 0.9
+ },
+ {
+  "name": "n6a",
+  "spk": "N",
+  "text": "Ele olha a folha de novo. A letra é redonda, inclinada. O erre tem um rabinho.",
+  "shot": "folha_g",
+  "gap": 0.8
+ },
+ {
+  "name": "r6",
+  "spk": "R",
+  "text": "Essa letra é minha.",
+  "shot": "rafael_folha",
+  "gap": 0.5
+ },
+ {
+  "name": "n6b",
+  "spk": "N",
+  "text": "Todas as regras, escritas por ele. E embaixo, uma data: amanhã.",
+  "shot": "folha_data",
+  "gap": 0.6
+ },
+ {
+  "name": "n7",
+  "spk": "N",
+  "text": "A regra cinco está em branco. No celular, uma mensagem do próprio número dele: Amanhã chega um vigia novo. Quem entrega a folha, vai embora. Quem não entrega, fica para sempre.",
+  "shot": "celular",
+  "gap": 0.9
+ },
+ {
+  "name": "r7",
+  "spk": "R",
+  "text": "Se eu entregar... ele vai passar por tudo isso.",
+  "shot": "rafael_pensa",
+  "gap": 0.8
+ },
+ {
+  "name": "n8",
+  "spk": "N",
+  "text": "Entregar a folha e ir embora, deixando outro no lugar. Ou queimar a folha e ficar, para que ninguém mais precise passar por isso. O que o Rafael faz? Você decide. A segunda parte segue o que a maioria escolher.",
+  "shot": "final",
+  "gap": 0.9
+ }
+]
