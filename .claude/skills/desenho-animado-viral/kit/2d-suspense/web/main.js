@@ -160,10 +160,12 @@ const off = document.createElement('canvas'); off.width = W; off.height = H; con
 window.renderFrame = (f) => {
   const s = f / 30, sh = SHOTS.find((x) => s >= x.a && s < x.b) || SHOTS[SHOTS.length - 1], lt = clamp((s - sh.a) / Math.max(sh.b - sh.a, 0.01));
   og.setTransform(1, 0, 0, 1, 0, 0); og.clearRect(0, 0, W, H); SC[sh.type](og, f, s, sh, lt);
-  const [cx0, cy0, z0, z1] = CAM[sh.type] || [540, 960, 1, 1.06], mv = MOVE[sh.type], k = ease(lt), z = lerp(z0, z1, k);
+  const [cx0, cy0, z0, z1] = CAM[sh.type] || [540, 960, 1, 1.06], mv = MOVE[sh.type], k = ease(lt), z = lerp(z0, z1, k) * (1 + 0.045 * Math.pow(1 - easeOut((s - sh.a) / 0.28), 2));   // punch-in no corte (antecipação/assentamento)
+  const imp = (sh.type === 'radio_voz' || sh.id === 'n6b') && (s - sh.a) < 0.1;   // quadros de impacto
   const cx = mv ? lerp(cx0, mv[0], k) : cx0, cy = mv ? lerp(cy0, mv[1], k) : cy0, [sx, sy] = shake(f, sh.type.startsWith('rafael') || sh.type === 'radio_voz' ? 3 : 1.2);
   g.setTransform(1, 0, 0, 1, 0, 0); g.fillStyle = '#05080f'; g.fillRect(0, 0, W, H);
   g.setTransform(z, 0, 0, z, W / 2 - cx * z + sx, H / 2 - cy * z + sy); g.drawImage(off, 0, 0); g.setTransform(1, 0, 0, 1, 0, 0);
+  if (imp && Math.floor((s - sh.a) * 30) % 2 === 0) { g.globalCompositeOperation = 'difference'; g.fillStyle = '#fff'; g.fillRect(0, 0, W, H); g.globalCompositeOperation = 'source-over'; }
   cardRule(g, sh.rule, s - sh.a);
   const vg = g.createRadialGradient(540, 960, 500, 540, 960, 1250); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,.55)'); g.fillStyle = vg; g.fillRect(0, 0, W, H);
   const dk = clamp((s - 20) / 80) * 0.22; g.fillStyle = `rgba(4,8,20,${dk})`; g.fillRect(0, 0, W, H);   // escurece com o tempo

@@ -47,6 +47,7 @@ Estas são correções reais que o usuário fez. Cada item é uma regra.
 **Motor 2D (preferido desde "Plantão")**
 - `kit/2d-suspense/`: Canvas 2D puro (sem Three.js), ~0,6–1 s/quadro, 4 processos em paralelo. `web/main.js` (cenas por tipo de plano, `CAM` zoom, vinheta, grão), `plan_cuts.py` (1 plano por fala, corte 0,12 s antes), `pt_phr4.py` (voz frase a frase, Chatterbox pt-BR, ASR estrito), `build_voice7.py`, `audio4.py`, `make_ass.py`, `mix2.py`, `finish.sh`. Exemplo de roteiro: `work/script_exemplo.json`.
 - Vozes escolhidas pelo usuário via candidatas derivadas por pitch (`pt_cand2.py`): 3 opções por personagem.
+- **Melhorias de edição (v3):** legendas palavra a palavra com destaque (`make_ass2.py`, alinha cada palavra ao `voice.wav` com faster-whisper; use `-vf "setpts=...,ass=legendas2.ass"`), punch-in de 4,5% em todo corte, quadros de impacto (inversão em 2 quadros) nos sustos, teste cego de voz A/B (`ab_f5.py`: F5-TTS pt-BR `firstpixel/F5-TTS-pt-br`, uso não comercial; texto em minúsculas; números por extenso; ele errou "sétimo andar" no teste, então confira por ASR).
 - Pesquisa de referência (voz limpa + animação profissional): `PESQUISA-voz-e-animacao.md`.
 
 **Som**
