@@ -53,6 +53,16 @@ Estas são correções reais que o usuário fez. Cada item é uma regra.
 - **Legendas × elementos:** legenda fica em y≈1650–1800; nada importante (botões, contador) abaixo de y≈1600 após o zoom da câmera.
 - Pesquisa de referência (voz limpa + animação profissional): `PESQUISA-voz-e-animacao.md`.
 
+**Roteiro profissional (o usuário reprovou um roteiro "confuso no final": releia isto antes de escrever)**
+- **Um medo, uma pergunta dramática, um dilema.** Escreva primeiro: logline de 1 frase, a pergunta que o espectador quer ver respondida e as DUAS opções finais com a consequência de cada uma. Se não cabe em 1 frase por opção, está confuso.
+- **Vocabulário único:** cada coisa tem UM nome no vídeo todo (ex.: "pedido", "entregar", "entrar"). Os botões finais usam exatamente os verbos que a história plantou.
+- **Plante e pague:** toda regra/aviso dita no começo (prazo, "conta bloqueada", "não toque a campainha") tem que ser usada depois; nada aparece no final sem ter sido plantado antes. Corte o que não avança pergunta, pista ou aposta.
+- **Apostas explícitas, simétricas e ditas em voz clara antes da decisão** (o que se perde em cada opção, em palavras simples, sem "perder tudo"/"quem está certo" vagos). Nenhuma opção pode ser obviamente a boa.
+- **Causa e efeito linear e datas simples:** nada de "amanhã"/"ontem" sem necessidade; prefira horários (02:14 → 02:31 → 02:40) com cartão na tela.
+- **Teste de clareza:** resuma cada fala em 3 palavras (o que muda?). Se duas falas dizem o mesmo, ou uma não muda nada, corte. Leia o roteiro em voz alta como um estranho: ele sabe QUEM quer O QUÊ, O QUE acontece se falhar e O QUE o público decide?
+- Frases finais curtas, sem palavra solta de 1 palavra (o TTS erra); frases de 5+ palavras.
+- Pesquisa de apoio: dilema único, plante/pague (Chekhov), ambos os finais roteirizados e equilibrados, cliffhanger que nasce da própria história.
+
 **Som**
 - No modo suspense, trilha/efeitos de suspense **altos**: música ≈ voz −0,4 dB, efeitos ≈ −2 dB, com ducking leve na voz (`mix2.py`). A regra "50 % da voz" vale só para o cartoon leve. Siga o pedido do usuário.
 - Camadas de suspense: crescendo antes da virada, drone grave, batimentos que aceleram, rangido agudo, batidas graves, apito no fim, silêncio dramático e golpe no cartão final.
