@@ -53,6 +53,8 @@ Estas são correções reais que o usuário fez. Cada item é uma regra.
 - **Legendas × elementos:** legenda fica em y≈1650–1800; nada importante (botões, contador) abaixo de y≈1600 após o zoom da câmera.
 - Pesquisa de referência (voz limpa + animação profissional): `PESQUISA-voz-e-animacao.md`.
 
+- **ElevenLabs gratuito é instável (testado 2x):** funciona numa chamada e, minutos depois, volta "Unusual activity… Free Tier disabled" (pode ser gatilho de proxy/VPN do container). Gere **uma fala por vez**, não em rajada de 13 chamadas paralelas; baixe cada mp3 assim que gerar (links expiram em ~2 h); nunca refaça a chamada que falhou nem contorne. Plano B: o usuário gera as falas que faltarem na conta dele, ou plano pago. Não misture duas vozes (ElevenLabs + F5) no mesmo personagem.
+
 **Roteiro profissional (o usuário reprovou um roteiro "confuso no final": releia isto antes de escrever)**
 - **Um medo, uma pergunta dramática, um dilema.** Escreva primeiro: logline de 1 frase, a pergunta que o espectador quer ver respondida e as DUAS opções finais com a consequência de cada uma. Se não cabe em 1 frase por opção, está confuso.
 - **Vocabulário único:** cada coisa tem UM nome no vídeo todo (ex.: "pedido", "entregar", "entrar"). Os botões finais usam exatamente os verbos que a história plantou.
