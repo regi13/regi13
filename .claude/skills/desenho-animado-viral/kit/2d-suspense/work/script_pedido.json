@@ -10,7 +10,7 @@
  {
   "name": "t1",
   "spk": "R",
-  "text": "Eu não pedi nada. Deve ser um erro.",
+  "text": "Eu não fiz nenhum pedido. Deve ser um erro.",
   "shot": "thiago_duvida",
   "gap": 0.6
  },
@@ -24,14 +24,14 @@
  {
   "name": "s1",
   "spk": "C",
-  "text": "Central do app. Pedido aceito precisa ser entregue até as duas e quarenta e um. Se cancelar, a sua conta é bloqueada.",
+  "text": "Central do app. Pedido confirmado precisa ser entregue até as duas e quarenta e um. Se cancelar, a sua conta é bloqueada.",
   "shot": "suporte",
   "gap": 0.7
  },
  {
   "name": "t2",
   "spk": "R",
-  "text": "Entregar na minha própria casa? Tá bom. Esse emprego paga o meu aluguel.",
+  "text": "Entregar na minha própria casa? Tá bom. Esse emprego paga as minhas contas.",
   "shot": "thiago_duvida",
   "gap": 0.5
  },

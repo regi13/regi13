@@ -55,6 +55,8 @@ Estas são correções reais que o usuário fez. Cada item é uma regra.
 
 - **ElevenLabs gratuito é instável (testado 2x):** funciona numa chamada e, minutos depois, volta "Unusual activity… Free Tier disabled" (pode ser gatilho de proxy/VPN do container). Gere **uma fala por vez**, não em rajada de 13 chamadas paralelas; baixe cada mp3 assim que gerar (links expiram em ~2 h); nunca refaça a chamada que falhou nem contorne. Plano B: o usuário gera as falas que faltarem na conta dele, ou plano pago. Não misture duas vozes (ElevenLabs + F5) no mesmo personagem.
 
+- **Voz Microsoft (edge-tts, escolha do usuário em "O Último Pedido v4"):** `pip install edge-tts`; host `speech.platform.bing.com` liberado no ambiente e **precisa de `--proxy $HTTPS_PROXY`** (sem ele dá DNS error). Vozes pt-BR: Antonio, Francisca, ThalitaMultilingual; masculinas extras multilíngues (en-US Brian/Andrew) falam pt com sotaque leve. Variar personagem = pitch/rate (Antonio +8Hz +6% = jovem; −3Hz −4% = seco; Brian −8% = narrador). `edge_phr.py` gera frase a frase + ASR. Palavras que ele deforma: 'aceito' (→ 'a seito'), 'aluguel' (→ 'aludiel'): troque por sinônimo ('confirmado', 'contas'). Não monetizar sem checar os termos (uso não oficial do serviço do Edge).
+
 **Roteiro profissional (o usuário reprovou um roteiro "confuso no final": releia isto antes de escrever)**
 - **Um medo, uma pergunta dramática, um dilema.** Escreva primeiro: logline de 1 frase, a pergunta que o espectador quer ver respondida e as DUAS opções finais com a consequência de cada uma. Se não cabe em 1 frase por opção, está confuso.
 - **Vocabulário único:** cada coisa tem UM nome no vídeo todo (ex.: "pedido", "entregar", "entrar"). Os botões finais usam exatamente os verbos que a história plantou.
