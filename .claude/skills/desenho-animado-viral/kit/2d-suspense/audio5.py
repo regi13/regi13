@@ -244,7 +244,7 @@ SH = {s["id"]: s for s in _SH["shots"]}; TT = np.arange(N) / SR
 music = np.zeros(N, np.float32); sfx = np.zeros(N, np.float32)
 hum = (np.sin(2 * np.pi * 100 * TT) * 0.5 + np.sin(2 * np.pi * 200 * TT) * 0.2) * 0.05
 grow = np.clip((TT - 0.6) / (DUR - 4), 0, 1) ** 0.8
-n7 = SH["n7"]; lightoff = n7["a"] + (n7["b"] - n7["a"]) * 0.3
+n7 = SH["n6"]; lightoff = n7["a"] + (n7["b"] - n7["a"]) * 0.3
 sil = np.ones(N, np.float32); sil[(TT > lightoff - 0.9) & (TT < lightoff + 0.1)] = 0.0; sil = np.convolve(sil, np.ones(int(0.15 * SR)) / int(0.15 * SR), "same")
 drone = (np.sin(2 * np.pi * 55 * TT) + 0.6 * np.sin(2 * np.pi * 55.7 * TT) + 0.4 * np.sin(2 * np.pi * 82.4 * TT + 1.0) + 0.25 * np.sin(2 * np.pi * 116.5 * TT)) * (0.55 + 0.45 * np.sin(2 * np.pi * 0.11 * TT))
 music += (drone * (0.25 + 0.75 * grow) * sil).astype(np.float32) + hum.astype(np.float32)
@@ -261,21 +261,21 @@ for t0, n_ in ((0.9, 6), (1.9, 19), (3.2, 22)):
 place(sfx, pop(), SH["n1"]["b"] - 0.3, 0.6)
 l = SH["n2"]; place(sfx, buzz(0.45), l["a"] + 0.1, 0.9); place(sfx, buzz(0.45), l["a"] + 0.9, 0.9)
 for sid in ("s1", "s2", "s3"): place(sfx, click(1400), SH[sid]["a"] + 0.05, 0.9); place(sfx, static(SH[sid]["b"] - SH[sid]["a"], 0.07), SH[sid]["a"], 0.6)
-l6 = SH["n6"]; place(sfx, buzz(0.4), l6["a"] + 0.1, 0.9); place(sfx, buzz(0.4), l6["a"] + 0.7, 0.9)
+l6 = SH["n7"]; place(sfx, buzz(0.4), l6["a"] + 0.1, 0.9); place(sfx, buzz(0.4), l6["a"] + 0.7, 0.9)
 place(sfx, lp_fast(noise(SH["n3"]["b"] - SH["n3"]["a"]), 500) * 0.25, SH["n3"]["a"], 0.6)
 place(sfx, riser(2.5, 90, 700), SH["n3"]["b"] - 2.4, 0.4)
 r_ = SH["n4"]; place(sfx, whoosh(0.5), r_["a"] + 0.05, 0.6)
 for k_ in range(10): place(sfx, tick(0.05), r_["a"] + 0.4 + k_ * 0.11, 0.5)
-place(sfx, stamp(), r_["a"] + 3.2, 1.0)
+place(sfx, stamp(), r_["phrases"][-1]["start"] + 0.3, 1.0)
 place(sfx, creak(0.9, 120), SH["n5"]["a"] + 0.4, 0.5)
 place(sfx, hit(), SH["t4"]["a"] - 0.02, 0.9); place(sfx, screech(1.6, 2100), SH["t4"]["a"] + 0.9, 0.22)
-place(sfx, hit(), SH["n7"]["a"] - 0.02, 0.8)
+place(sfx, hit(), SH["n6"]["a"] - 0.02, 0.8)
 sec = n7["a"]
 while sec < n7["b"]: place(sfx, tick(0.04), sec, 1.0); sec += 1.0
 place(sfx, click(900), lightoff, 1.0); place(sfx, thunk(60, 0.4), lightoff + 0.05, 1.1)
 place(sfx, riser(max(1.0, n7["b"] - lightoff - 0.2), 90, 1300), lightoff + 0.1, 0.5)
 for p_ in SH["n8"]["phrases"]:
-    if "abrir a porta" in p_["text"].lower(): place(sfx, pop(), p_["start"], 0.9); place(sfx, hit(70, 0.8), p_["start"], 0.5)
+    if "entrar na própria" in p_["text"].lower(): place(sfx, pop(), p_["start"], 0.9); place(sfx, hit(70, 0.8), p_["start"], 0.5)
     if "cancelar" in p_["text"].lower(): place(sfx, pop(), p_["start"], 0.9); place(sfx, hit(60, 0.8), p_["start"], 0.5)
     if "decide" in p_["text"].lower() or "Parte 2" in p_["text"]: place(sfx, hit(45, 1.5), p_["start"], 0.9)
 def wav(name, x):

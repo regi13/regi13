@@ -82,9 +82,9 @@ const reciboCena = (c, f, s, sh) => {
   txt(c, 'PEDIDO #0214', 0, -540, 66, '#1b1b24'); c.fillStyle = '#c9bfa6'; c.fillRect(-290, -480, 580, 5);
   txt(c, 'Cliente: Thiago', -290, -400, 46, '#1b1b24', 'left'); txt(c, 'Itens', -290, -310, 46, '#1b1b24', 'left');
   txt(c, '1 x o entregador', -290, -230, 52, '#7a1d18', 'left');
-  c.fillStyle = '#c9bfa6'; c.fillRect(-290, -170, 580, 5); txt(c, 'Pedido:', -290, -80, 42, '#1b1b24', 'left'); txt(c, '02:14 (hoje)', 290, -80, 42, '#1b1b24', 'right');
-  txt(c, 'Entrega:', -290, 40, 42, '#1b1b24', 'left');
-  const st = back((tt - 3.2) * 3); if (st > 0.02) { c.save(); c.translate(0, 220); c.rotate(-0.1); c.scale(st, st); box(c, -300, -90, 600, 180, 'rgba(0,0,0,0)', 14, 12); c.strokeStyle = '#c0392b'; c.strokeRect(-300, -90, 600, 180); txt(c, 'AMANHÃ 02:41', 0, 0, 78, '#c0392b'); c.restore(); }
+  c.fillStyle = '#c9bfa6'; c.fillRect(-290, -170, 580, 5); txt(c, 'Pedido:', -290, -80, 42, '#1b1b24', 'left'); txt(c, '02:14', 290, -80, 42, '#1b1b24', 'right');
+  txt(c, 'Entrega até:', -290, 40, 42, '#1b1b24', 'left'); txt(c, '02:41', 290, 40, 42, '#1b1b24', 'right');
+  const st = back((tt - (sh.phrases[sh.phrases.length - 1].start - sh.a)) * 3); if (st > 0.02) { c.save(); c.translate(0, 220); c.rotate(-0.1); c.scale(st, st); box(c, -300, -90, 600, 180, 'rgba(0,0,0,0)', 14, 12); c.strokeStyle = '#c0392b'; c.strokeRect(-300, -90, 600, 180); txt(c, 'ENTREGUE', 0, 0, 84, '#c0392b'); c.restore(); }
   c.restore();
 };
 const janelaCena = (c, f, s, sh, luz = 1, anda = false) => {
@@ -124,10 +124,10 @@ const SC = {
   contagem: (c, f, s, sh) => contagemCena(c, f, s, sh),
   final: (c, f, s, sh) => {
     c.fillStyle = lin(c, 0, 1920, '#0b1220', '#16233a'); c.fillRect(0, 0, W, 1920); const tt = s - sh.a;
-    const ph = sh.phrases; const t1 = (ph.find((p) => /Abrir a porta/i.test(p.text)) || ph[0]).start, t2 = (ph.find((p) => /cancelar/i.test(p.text)) || ph[1] || ph[0]).start, t3 = (ph.find((p) => /Você decide|Parte 2/i.test(p.text)) || ph[ph.length - 1]).start;
+    const ph = sh.phrases; const t1 = (ph.find((p) => /Entrar na própria/i.test(p.text)) || ph[0]).start, t2 = (ph.find((p) => /cancelar/i.test(p.text)) || ph[1] || ph[0]).start, t3 = (ph.find((p) => /Você decide|Parte 2/i.test(p.text)) || ph[ph.length - 1]).start;
     txt(c, 'O QUE O THIAGO FAZ?', 540, 330, 68, '#ffc24a', 'center', 'DejaVu Sans', 'bold', INK, 14);
     const b1 = back((s - t1) * 3), b2 = back((s - t2) * 3), wob = Math.sin(f * 0.35);
-    c.save(); c.translate(540, 760); c.scale(clamp(b1, 0, 1.1), clamp(b1, 0, 1.1)); box(c, -400, -150, 800, 300, '#2e8b57', 36, 12); txt(c, '1', -300, 0, 150, '#0f1420'); txt(c, 'ABRIR', -40, -40, 82, '#f3fff6', 'left'); txt(c, 'A PORTA', -40, 50, 82, '#f3fff6', 'left'); c.restore();
+    c.save(); c.translate(540, 760); c.scale(clamp(b1, 0, 1.1), clamp(b1, 0, 1.1)); box(c, -400, -150, 800, 300, '#2e8b57', 36, 12); txt(c, '1', -300, 0, 150, '#0f1420'); txt(c, 'ENTRAR', -40, -40, 82, '#f3fff6', 'left'); txt(c, 'NA CASA', -40, 50, 82, '#f3fff6', 'left'); c.restore();
     c.save(); c.translate(540, 1140); c.scale(clamp(b2, 0, 1.1), clamp(b2, 0, 1.1)); box(c, -400, -150, 800, 300, '#c0392b', 36, 12); txt(c, '2', -300, 0, 150, '#0f1420'); txt(c, 'CANCELAR', -40, -40, 82, '#fff3f1', 'left'); txt(c, 'O PEDIDO', -40, 50, 82, '#fff3f1', 'left'); c.restore();
     if (b1 > 0.3) { c.save(); c.translate(890, 625); box(c, -42, -60, 84, 120, '#7a4a2a', 8, 7); c.beginPath(); c.arc(18, 4, 7, 0, 7); c.fillStyle = '#d9a845'; c.fill(); c.restore(); }
     if (b2 > 0.3) { c.save(); c.translate(890, 1010 + 4 * wob); c.lineWidth = 16; c.strokeStyle = INK; c.lineCap = 'round'; c.beginPath(); c.moveTo(-34, -34); c.lineTo(34, 34); c.moveTo(34, -34); c.lineTo(-34, 34); c.stroke(); c.lineWidth = 8; c.strokeStyle = '#ffd7d2'; c.beginPath(); c.moveTo(-34, -34); c.lineTo(34, 34); c.moveTo(34, -34); c.lineTo(-34, 34); c.stroke(); c.restore(); }
@@ -147,7 +147,7 @@ window.renderFrame = (f) => {
   const s = f / 30, sh = SHOTS.find((x) => s >= x.a && s < x.b) || SHOTS[SHOTS.length - 1], lt = clamp((s - sh.a) / Math.max(sh.b - sh.a, 0.01));
   og.setTransform(1, 0, 0, 1, 0, 0); og.clearRect(0, 0, W, H); SC[sh.type](og, f, s, sh, lt);
   const [cx0, cy0, z0, z1] = CAM[sh.type] || [540, 960, 1, 1.06], mv = MOVE[sh.type], k = ease(lt), z = lerp(z0, z1, k) * (1 + 0.045 * Math.pow(1 - easeOut((s - sh.a) / 0.28), 2));   // punch-in no corte (antecipação/assentamento)
-  const imp = (sh.id === 't4' || sh.id === 'n7') && (s - sh.a) < 0.1;   // quadros de impacto
+  const imp = (sh.id === 't4' || sh.id === 'n6') && (s - sh.a) < 0.1;   // quadros de impacto
   const cx = mv ? lerp(cx0, mv[0], k) : cx0, cy = mv ? lerp(cy0, mv[1], k) : cy0, [sx, sy] = shake(f, sh.type.startsWith('thiago') ? 3 : 1.2);
   g.setTransform(1, 0, 0, 1, 0, 0); g.fillStyle = '#05080f'; g.fillRect(0, 0, W, H);
   g.setTransform(z, 0, 0, z, W / 2 - cx * z + sx, H / 2 - cy * z + sy); g.drawImage(off, 0, 0); g.setTransform(1, 0, 0, 1, 0, 0);

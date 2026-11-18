@@ -2,7 +2,7 @@
  {
   "name": "n1",
   "spk": "N",
-  "text": "Duas e catorze da manhã. Um pedido novo. O cliente se chama Thiago. O endereço é a casa do Thiago.",
+  "text": "Duas e catorze da manhã. Thiago, entregador, recebe um pedido novo. O cliente é ele mesmo. E o endereço é a casa dele.",
   "shot": "app",
   "gap": 0.0,
   "rule": "02:14"
@@ -17,35 +17,35 @@
  {
   "name": "n2",
   "spk": "N",
-  "text": "Ele liga para a central do app.",
+  "text": "Ele liga para a central do aplicativo.",
   "shot": "ligacao",
   "gap": 0.5
  },
  {
   "name": "s1",
   "spk": "C",
-  "text": "Central do app. Pedido com o seu nome? É normal. Aceite e entregue.",
+  "text": "Central do app. Pedido aceito precisa ser entregue até as duas e quarenta e um. Se cancelar, a sua conta é bloqueada.",
   "shot": "suporte",
   "gap": 0.7
  },
  {
   "name": "t2",
   "spk": "R",
-  "text": "Normal? Entregar na minha própria casa?",
+  "text": "Entregar na minha própria casa? Tá bom. Esse emprego paga o meu aluguel.",
   "shot": "thiago_duvida",
   "gap": 0.5
  },
  {
   "name": "s2",
   "spk": "C",
-  "text": "Observação do cliente: não toque a campainha. Boa entrega.",
+  "text": "Observação do cliente: não toque a campainha. Entre e deixe o pedido na mesa.",
   "shot": "suporte",
   "gap": 0.7
  },
  {
   "name": "n3",
   "spk": "N",
-  "text": "A rua está vazia. A luz da sala está acesa. O Thiago não deixou a luz acesa.",
+  "text": "Ele chega. A rua está vazia. A luz da sala está acesa, e o Thiago não deixou a luz acesa.",
   "shot": "casa",
   "gap": 0.8,
   "rule": "02:31"
@@ -53,21 +53,21 @@
  {
   "name": "n4",
   "spk": "N",
-  "text": "No recibo, só um item, o entregador. Hora da entrega: amanhã, duas e quarenta e um.",
+  "text": "No papel do pedido, o único item é o entregador. E o status já diz que foi entregue.",
   "shot": "recibo",
   "gap": 0.7
  },
  {
   "name": "t3",
   "spk": "R",
-  "text": "Amanhã? Isso não faz sentido.",
+  "text": "Entregue? Eu nem entrei ainda.",
   "shot": "thiago_medo",
   "gap": 0.6
  },
  {
   "name": "n5",
   "spk": "N",
-  "text": "Pela janela, ele vê alguém sentado à mesa. De capacete. Com a mochila dele. Esperando uma entrega.",
+  "text": "Pela janela, ele vê um homem sentado à mesa. Ele usa o mesmo uniforme e a mesma mochila.",
   "shot": "janela",
   "gap": 0.8
  },
@@ -79,38 +79,38 @@
   "gap": 1.0
  },
  {
-  "name": "n6",
+  "name": "n7",
   "spk": "N",
-  "text": "O celular vibra. É a central de novo.",
+  "text": "O celular vibra. A central liga de novo.",
   "shot": "ligacao",
   "gap": 0.9
  },
  {
   "name": "s3",
   "spk": "C",
-  "text": "Aviso. Cancelar pedido de cliente bloqueia a conta para sempre. Entregar conclui o pedido.",
+  "text": "Faltam trinta segundos. Se cancelar, a conta é bloqueada e o pedido vai para o próximo entregador.",
   "shot": "suporte",
   "gap": 0.7
  },
  {
+  "name": "n6",
+  "spk": "N",
+  "text": "Na janela, o homem levanta o rosto, olha para ele e balança a cabeça: não entre.",
+  "shot": "contagem",
+  "gap": 0.8,
+  "rule": "02:40"
+ },
+ {
   "name": "t5",
   "spk": "R",
-  "text": "Concluir o pedido... com ele lá dentro?",
+  "text": "Se eu cancelo, perco o emprego. Se eu entro, eu viro ele.",
   "shot": "thiago_pensa",
   "gap": 0.8
  },
  {
-  "name": "n7",
-  "spk": "N",
-  "text": "Trinta segundos. A luz da sala se apaga. Do outro lado da janela, o outro Thiago balança a cabeça: não abra.",
-  "shot": "contagem",
-  "gap": 0.9,
-  "rule": "00:30"
- },
- {
   "name": "n8",
   "spk": "N",
-  "text": "Abrir a porta e descobrir quem está certo. Ou cancelar o pedido e perder tudo. O que o Thiago faz? Você decide. A segunda parte segue o que a maioria escolher.",
+  "text": "Entrar na própria casa, como o aplicativo manda. Ou cancelar, perder a conta e mandar outro entregador no seu lugar. O que o Thiago faz? Você decide. A segunda parte segue o que a maioria escolher.",
   "shot": "final",
   "gap": 0.9
  }
