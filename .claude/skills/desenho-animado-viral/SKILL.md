@@ -57,6 +57,9 @@ Estas são correções reais que o usuário fez. Cada item é uma regra.
 
 - **Voz Microsoft (edge-tts, escolha do usuário em "O Último Pedido v4"):** `pip install edge-tts`; host `speech.platform.bing.com` liberado no ambiente e **precisa de `--proxy $HTTPS_PROXY`** (sem ele dá DNS error). Vozes pt-BR: Antonio, Francisca, ThalitaMultilingual; masculinas extras multilíngues (en-US Brian/Andrew) falam pt com sotaque leve. Variar personagem = pitch/rate (Antonio +8Hz +6% = jovem; −3Hz −4% = seco; Brian −8% = narrador). `edge_phr.py` gera frase a frase + ASR. Palavras que ele deforma: 'aceito' (→ 'a seito'), 'aluguel' (→ 'aludiel'): troque por sinônimo ('confirmado', 'contas'). Não monetizar sem checar os termos (uso não oficial do serviço do Edge).
 
+- **Séries (pedido do usuário):** toda história é dividida em 3–4 partes; a decisão do público nunca encerra a trama, só muda o ramo, e os ramos convergem na parte seguinte. Cada parte: resumo de 5 s, uma pergunta nova, fim com 1/2. Bíblia da série em `kit/2d-suspense/series/` (ex.: `ela-mora-aqui.md`). Exemplo de cenas CCTV/linha do tempo: `exemplo-ela/main_ela.js`, trilha `audio6.py`.
+- **Nomes e palavras difíceis para a voz Brian:** 'Bia' vira 'Abhi', 'câmera' vira 'Cameron' em certos contextos, 'molhada' vira 'malhara': troque por 'Clara', 'ainda úmida' etc. e confira no `voice.wav` final com `check_voice.py`.
+
 **Roteiro profissional (o usuário reprovou um roteiro "confuso no final": releia isto antes de escrever)**
 - **Um medo, uma pergunta dramática, um dilema.** Escreva primeiro: logline de 1 frase, a pergunta que o espectador quer ver respondida e as DUAS opções finais com a consequência de cada uma. Se não cabe em 1 frase por opção, está confuso.
 - **Vocabulário único:** cada coisa tem UM nome no vídeo todo (ex.: "pedido", "entregar", "entrar"). Os botões finais usam exatamente os verbos que a história plantou.

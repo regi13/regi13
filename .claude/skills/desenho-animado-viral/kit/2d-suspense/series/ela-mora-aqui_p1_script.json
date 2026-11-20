@@ -1,0 +1,95 @@
+[
+ {
+  "name": "n1",
+  "spk": "N",
+  "text": "Toda manhã, Clara acordava com a casa um pouco diferente. A escova, ainda úmida. O pote de arroz mais vazio. A cadeira fora do lugar. E ela morava sozinha.",
+  "shot": "casa_manha",
+  "gap": 0.0
+ },
+ {
+  "name": "b1",
+  "spk": "R",
+  "text": "Eu estou ficando louca. Só pode ser isso.",
+  "shot": "bia_duvida",
+  "gap": 0.6
+ },
+ {
+  "name": "n2",
+  "spk": "N",
+  "text": "A casa era da avó dela, que morreu em março. Clara herdou tudo, menos a chave do sótão. Está trancado desde sempre.",
+  "shot": "casa_avo",
+  "gap": 0.7
+ },
+ {
+  "name": "n3",
+  "spk": "N",
+  "text": "Então ela instala uma câmera na sala, apontada para o corredor.",
+  "shot": "camera_instala",
+  "gap": 0.7
+ },
+ {
+  "name": "n4",
+  "spk": "N",
+  "text": "Três horas e doze minutos da madrugada. Clara dorme no quarto ao lado. A câmera está gravando.",
+  "shot": "quarto_noite",
+  "gap": 0.8,
+  "rule": "03:12"
+ },
+ {
+  "name": "n5",
+  "spk": "N",
+  "text": "Na manhã seguinte, ela assiste. Primeiro, nada. Depois, o teto do corredor se abre.",
+  "shot": "feed_a",
+  "gap": 0.8
+ },
+ {
+  "name": "n6",
+  "spk": "N",
+  "text": "Uma mulher desce uma escada dobrável, devagar. Descalça, vestindo um roupão azul. O roupão era da avó.",
+  "shot": "feed_b",
+  "gap": 0.6
+ },
+ {
+  "name": "b2",
+  "spk": "R",
+  "text": "Esse roupão sumiu depois do enterro.",
+  "shot": "bia_choque",
+  "gap": 0.8
+ },
+ {
+  "name": "n7",
+  "spk": "N",
+  "text": "A mulher bebe água na cozinha. Passa pela porta do quarto da Clara e fica ali, parada, um minuto inteiro, só olhando.",
+  "shot": "feed_c",
+  "gap": 0.8
+ },
+ {
+  "name": "n8",
+  "spk": "N",
+  "text": "Depois ela olha direto para a câmera e leva o dedo à boca, pedindo silêncio.",
+  "shot": "feed_d",
+  "gap": 0.6
+ },
+ {
+  "name": "n9",
+  "spk": "N",
+  "text": "O celular da Clara vibra. A câmera avisa: movimento na sala, agora. Ela está no trabalho, a vinte minutos de casa.",
+  "shot": "alerta",
+  "gap": 0.9,
+  "rule": "08:40"
+ },
+ {
+  "name": "b3",
+  "spk": "R",
+  "text": "Ela está lá agora.",
+  "shot": "bia_medo",
+  "gap": 0.7
+ },
+ {
+  "name": "n10",
+  "spk": "N",
+  "text": "Voltar sozinha, entrar e olhar a mulher nos olhos? Ou chamar a polícia e esperar na rua, e correr o risco de ela fugir? O que a Clara faz? Você decide. A segunda parte segue o que a maioria escolher.",
+  "shot": "final",
+  "gap": 0.9
+ }
+]
